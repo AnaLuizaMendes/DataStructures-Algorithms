@@ -1,8 +1,8 @@
-# MY NOTES - DATA STRUCTURE & ALGORITHMS COURSE BY UDACITY
+# Udacity Exercise - Python Review Lesson
 
 # This exercise uses a data structure that stores Udacity course information.
 # The data structure format is:
-
+#
 #    { <semester>: { <class>: { <property>: <value>, ... },
 #                                     ... },
 #      ... }
@@ -42,19 +42,15 @@ courses = {
 
 
 def when_offered(courses, course):
-    # TODO: Fill out the function here.
+    # Create a empty list of semesters, then check for the course in the values of courses dictionary
+    # Whenever it found the course as a value in the dictionary it add the semester to the empty list
+    # Return a list with all the semesters that the course will be happening
     semesters = []
     for key, value in courses.items():
         if course in value:
             semesters.append(key)
-    # TODO: Return list of semesters here.
     return semesters
 
 
 print(when_offered(courses, 'cs101'))
-# Correct result:
-# ['fall2020', 'spring2020']
 
-print(when_offered(courses, 'bio893'))
-# Correct result:
-# []
